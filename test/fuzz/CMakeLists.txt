@@ -67,6 +67,7 @@ if (${SPIRV_BUILD_FUZZER})
           transformation_permute_phi_operands_test.cpp
           transformation_push_id_through_variable_test.cpp
           transformation_replace_parameter_with_global_test.cpp
+          transformation_replace_switch_instruction_test.cpp
           transformation_replace_boolean_constant_with_constant_binary_test.cpp
           transformation_replace_copy_object_with_store_load_test.cpp
           transformation_replace_constant_with_uniform_test.cpp

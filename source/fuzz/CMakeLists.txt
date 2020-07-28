@@ -79,6 +79,7 @@ if(SPIRV_BUILD_FUZZER)
         fuzzer_pass_replace_loads_stores_with_copy_memories.h
         fuzzer_pass_replace_parameter_with_global.h
         fuzzer_pass_replace_params_with_struct.h
+        fuzzer_pass_replace_switch_instructions.h
         fuzzer_pass_split_blocks.h
         fuzzer_pass_swap_commutable_operands.h
         fuzzer_pass_swap_conditional_branch_operands.h
@@ -146,6 +147,7 @@ if(SPIRV_BUILD_FUZZER)
         transformation_replace_load_store_with_copy_memory.h
         transformation_replace_parameter_with_global.h
         transformation_replace_params_with_struct.h
+        transformation_replace_switch_instruction.h
         transformation_set_function_control.h
         transformation_set_loop_control.h
         transformation_set_memory_operands_mask.h
@@ -208,6 +210,7 @@ if(SPIRV_BUILD_FUZZER)
         fuzzer_pass_replace_loads_stores_with_copy_memories.cpp
         fuzzer_pass_replace_parameter_with_global.cpp
         fuzzer_pass_replace_params_with_struct.cpp
+        fuzzer_pass_replace_switch_instructions.cpp
         fuzzer_pass_split_blocks.cpp
         fuzzer_pass_swap_commutable_operands.cpp
         fuzzer_pass_swap_conditional_branch_operands.cpp
@@ -274,6 +277,7 @@ if(SPIRV_BUILD_FUZZER)
         transformation_replace_load_store_with_copy_memory.cpp
         transformation_replace_parameter_with_global.cpp
         transformation_replace_params_with_struct.cpp
+        transformation_replace_switch_instruction.cpp
         transformation_set_function_control.cpp
         transformation_set_loop_control.cpp
         transformation_set_memory_operands_mask.cpp

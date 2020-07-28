@@ -90,6 +90,7 @@ const std::pair<uint32_t, uint32_t> kChanceOfReplacingParametersWithGlobals = {
     30, 70};
 const std::pair<uint32_t, uint32_t> kChanceOfReplacingParametersWithStruct = {
     20, 40};
+const std::pair<uint32_t, uint32_t> kChanceOfReplacingSwitchInstruction = {10, 90};
 const std::pair<uint32_t, uint32_t> kChanceOfSplittingBlock = {40, 95};
 const std::pair<uint32_t, uint32_t> kChanceOfSwappingConditionalBranchOperands =
     {10, 70};
@@ -230,6 +231,7 @@ FuzzerContext::FuzzerContext(RandomGenerator* random_generator,
       ChooseBetweenMinAndMax(kChanceOfReplacingParametersWithGlobals);
   chance_of_replacing_parameters_with_struct_ =
       ChooseBetweenMinAndMax(kChanceOfReplacingParametersWithStruct);
+  chance_of_replacing_switch_instruction_ = ChooseBetweenMinAndMax(kChanceOfReplacingSwitchInstruction);
   chance_of_splitting_block_ = ChooseBetweenMinAndMax(kChanceOfSplittingBlock);
   chance_of_swapping_conditional_branch_operands_ =
       ChooseBetweenMinAndMax(kChanceOfSwappingConditionalBranchOperands);

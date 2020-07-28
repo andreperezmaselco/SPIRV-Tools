@@ -69,6 +69,7 @@
 #include "source/fuzz/transformation_replace_load_store_with_copy_memory.h"
 #include "source/fuzz/transformation_replace_parameter_with_global.h"
 #include "source/fuzz/transformation_replace_params_with_struct.h"
+#include "source/fuzz/transformation_replace_switch_instruction.h"
 #include "source/fuzz/transformation_set_function_control.h"
 #include "source/fuzz/transformation_set_loop_control.h"
 #include "source/fuzz/transformation_set_memory_operands_mask.h"
@@ -242,6 +243,8 @@ std::unique_ptr<Transformation> Transformation::FromMessage(
         kReplaceParamsWithStruct:
       return MakeUnique<TransformationReplaceParamsWithStruct>(
           message.replace_params_with_struct());
+    case protobufs::Transformation::TransformationCase::kReplaceSwitchInstruction:
+      return MakeUnique<TransformationReplaceSwitchInstruction>(message.replace_switch_instruction());
     case protobufs::Transformation::TransformationCase::kSetFunctionControl:
       return MakeUnique<TransformationSetFunctionControl>(
           message.set_function_control());

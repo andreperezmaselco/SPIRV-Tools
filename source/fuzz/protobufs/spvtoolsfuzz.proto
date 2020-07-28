@@ -407,6 +407,7 @@ message Transformation {
     TransformationReplaceCopyObjectWithStoreLoad replace_copy_object_with_store_load = 60;
     TransformationReplaceCopyMemoryWithLoadStore replace_copy_memory_with_load_store = 61;
     TransformationReplaceLoadStoreWithCopyMemory replace_load_store_with_copy_memory = 62;
+    TransformationReplaceSwitchInstruction replace_switch_instruction = 63;
     // Add additional option using the next available number.
   }
 }
@@ -1395,6 +1396,19 @@ message TransformationReplaceParamsWithStruct {
   // While maps are not fully deterministic, the way this map is used does not
   // exhibit nondeterminism. Change to repeated Uint32Pair if this changes.
   map<uint32, uint32> caller_id_to_fresh_composite_id = 4;
+
+}
+
+message TransformationReplaceSwitchInstruction {
+
+  // Replaces an OpSwitch instruction with blocks
+  // containing OpBranchConditional instructions.
+
+  // The fresh ids needed to apply the transformation.
+  repeated uint32 fresh_ids = 1;
+
+  // A descriptor for an OpSwitch instruction.
+  InstructionDescriptor instruction_descriptor = 2;
 
 }
 
